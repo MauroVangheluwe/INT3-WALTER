@@ -1,4 +1,5 @@
-import './style.css'
+import '../styles/reset.css'
+import '../styles/style.css'
 import $ from 'jquery'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
