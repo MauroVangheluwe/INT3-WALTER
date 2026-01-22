@@ -7,23 +7,36 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // GSAP Plugins registreren
 gsap.registerPlugin(ScrollTrigger);
 
-// Wachten tot de DOM klaar is via jQuery
-$(document).ready(function() {
-  console.log("jQuery en Vite zijn succesvol gekoppeld!");
+// Progressive Enhancement
+document.addEventListener('DOMContentLoaded', () => {
+  // JavaScript-dependent stijl
+  document.documentElement.classList.add('js-enabled');
 
-  // Voorbeeld van de jQuery focus uit je opdracht:
-  // We stylen de titel direct via jQuery ipv CSS om aan de eis te voldoen
-  $('#main-title').css({
-    'font-size': '2rem',
-    'text-transform': 'uppercase',
-    'letter-spacing': '0.1em'
-  });
+  // Track click count for progressive blur reveal
+  let clickCount = 0;
+  const maxClicks = 4;
+  
+  const gun = document.querySelector('.gun');
+  const gunShape = document.querySelector('.gun-shape');
 
-  // Een simpele GSAP animatie om te testen of het werkt
-  gsap.from("#main-title", {
-    duration: 1.5,
-    y: 50,
-    opacity: 0,
-    ease: "power4.out"
-  });
+  if (gun && gunShape) {
+    gun.addEventListener('click', () => {
+      // Stop animation on first click
+      gun.classList.add('clicked');
+      
+      // Trigger recoil on Gun
+      gun.classList.add('recoil');
+      setTimeout(() => gun.classList.remove('recoil'), 200);
+
+      // Trigger Gentle Shake
+      document.body.classList.add('shake');
+      setTimeout(() => document.body.classList.remove('shake'), 200);
+      
+      if (clickCount < maxClicks) {
+        clickCount++;
+        gunShape.setAttribute('data-reveal', clickCount);
+        console.log(`Gun clicked: ${clickCount}/${maxClicks}`);
+      }
+    });
+  }
 });

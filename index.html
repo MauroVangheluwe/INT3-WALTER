@@ -18,9 +18,12 @@
   <!-- Wrapper voor jQuery showcase -->
   <!-- <div id="app"> -->
     <header>
-      <img src="./src/assets/logo.svg" alt="logo">
-      <h1>
-        <img src="./src/assets/header-gun.png" alt="" aria-hidden="true">
+      <img class="logo" src="./src/assets/logo.svg" alt="logo">
+      <h1 class="interactive-header">
+        <div class="header-layers">
+          <img class="gun" src="./src/assets/gun.png" alt="gun" aria-hidden="true">
+          <img class="gun-shape" src="./src/assets/gun-shape.png" alt="gun shape" aria-hidden="true">
+        </div>
         <span class="visually-hidden">Walter Van Beirendonck</span>
       </h1>
 
@@ -33,7 +36,7 @@
 
         <div class="hero-text">
           <h1>...INGEZET TEGEN DE REGELS VAN DE INDUSTRIE</h1>
-          <p>Met W&LT transformeert Walter Van Beirendonck mode tot een wapen:
+          <p>Met W&amp;LT transformeert Walter Van Beirendonck mode tot een wapen:
             een middel om conventies uit te dagen, zichtbaarheid te eisen en het lichaam tot drager van betekenis te maken.</p>
           <p>Elk kledingstuk, elke slogan, elke performance is geladen met confrontatie en expressie.</p>
           <div class="hero-cta">
@@ -168,7 +171,8 @@
     </footer>
   <!-- </div> -->
 
-  <!-- <script type="module" src="/src/scripts/main.js"></script> -->
+
+  <script type="module" src="/src/scripts/main.js"></script>
 </body>
 
 </html>
