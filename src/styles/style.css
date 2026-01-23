@@ -240,6 +240,10 @@ section {
 
 
 
+
+
+
+
 /* Header */
 /* -------------------------- */
 header {
@@ -335,7 +339,7 @@ header {
   transition: filter 0.3s ease;
 }
 
-/* Apply blur only when JavaScript is enabled - Progressive Enhancement */
+/* Progressive Enhancement */
 .js-enabled .gun-shape {
   filter: blur(6px);
 }
@@ -382,7 +386,6 @@ header {
 .hero-cta-arrow img {
   width: 100%;
   height: auto;
-  filter: brightness(0) saturate(100%) invert(94%) sepia(8%) saturate(436%) hue-rotate(353deg) brightness(98%) contrast(87%);
   transition: filter 0.3s ease;
 }
 
@@ -451,27 +454,17 @@ section {
 }
 
 
-
-
-
-
-
-
-
-/* .intro-img {
-  width: 60%;
-  margin-left: auto;
-  margin-right: -1.5rem;
-  margin-top: -5rem;
-}
-
 .intro-section-text-container {
-  margin: -10rem 1.5rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 8rem;
 }
 
-.intro-section-text-container * {
-  margin-bottom: 2.5rem;
-} */
+.intro-section-inter-text {
+  padding-right: 6rem;
+}
+
 
 /* WLT Carousel */
 .wlt-carousel-container {
@@ -513,9 +506,9 @@ section {
 }
 
 
-/* .intro-section blockquote {
+.intro-section blockquote {
   margin: 6rem 0;
-} */
+}
 
 
 
@@ -554,7 +547,7 @@ header .hero-text {
 
 
 /* === DEBUG INTRO SECTION === */
-.intro-section {
+/* .intro-section {
   outline: 2px solid red !important;
 }
 
@@ -580,7 +573,7 @@ header .hero-text {
 
 .intro-section div {
   outline: 2px solid purple !important;
-}
+} */
 
 /* === END DEBUG INTRO === */
 
