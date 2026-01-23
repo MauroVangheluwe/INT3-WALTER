@@ -222,6 +222,9 @@ section {
   width: clamp(80px, 10vw, 160px);
   height: auto;
   margin-bottom: 2rem;
+  background-color: var(--black);
+  padding: 2px;
+  border: 2px solid var(--black);
 }
 
 /* Header - Gun */
