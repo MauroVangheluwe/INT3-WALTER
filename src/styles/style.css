@@ -197,8 +197,10 @@ blockquote {
   transition: color 0.3s ease;
 }
 
-blockquote:hover {
-  color: var(--red);
+@media (hover: hover) and (pointer: fine) {
+  blockquote:hover {
+    color: var(--red);
+  }
 }
 
 blockquote::before,
@@ -223,9 +225,12 @@ blockquote::after {
   transform: translateY(4px);
 }
 
-blockquote:hover::before,
-blockquote:hover::after {
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+
+  blockquote:hover::before,
+  blockquote:hover::after {
+    opacity: 0;
+  }
 }
 
 
@@ -392,8 +397,10 @@ header {
   transition: filter 0.3s ease;
 }
 
-.hero-cta-arrow:hover img {
-  filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(5000%) hue-rotate(356deg) brightness(90%) contrast(115%);
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta-arrow:hover img {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(5000%) hue-rotate(356deg) brightness(90%) contrast(115%);
+  }
 }
 
 .hero-text {
@@ -422,8 +429,10 @@ header {
   transition: color 0.3s ease;
 }
 
-.hero-cta-text a:hover span {
-  color: var(--red);
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta-text a:hover span {
+    color: var(--red);
+  }
 }
 
 
@@ -581,6 +590,14 @@ section {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-ticket:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
 }
 
 .button-ticket img {
@@ -588,6 +605,13 @@ section {
   width: auto !important;
   max-width: none;
   flex-shrink: 0;
+  transition: filter 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-ticket:hover img {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(12%) saturate(450%) hue-rotate(1deg) brightness(102%) contrast(88%);
+  }
 }
 
 
@@ -828,12 +852,27 @@ section {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-tshirt:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
 }
 
 .button-tshirt img {
   height: 1.5em !important;
   width: auto !important;
   max-width: none;
+  transition: filter 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-tshirt:hover img {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(12%) saturate(450%) hue-rotate(1deg) brightness(102%) contrast(88%);
+  }
 }
 
 .tshirt-uitleg {
@@ -844,6 +883,111 @@ section {
 
 .tshirt-stack-container {
   margin-top: -3rem;
+}
+
+
+
+/* footer - section */
+/* -------------------------- */
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 3rem;
+}
+
+.footer-title,
+.footer-text {
+  text-align: right;
+}
+
+.footer-img {
+  border: 3px solid var(--white);
+}
+
+.button-story,
+.button-ticket-2 {
+  font-family: var(--font-owners-narrow);
+  font-size: 1.9rem;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: var(--white);
+  border: 5px solid var(--red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-story {
+  background-color: var(--white);
+  color: var(--black);
+  border: 5px solid var(--black);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-story:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+.button-ticket-2 {
+  background-color: var(--red);
+  color: var(--white);
+  border: 5px solid var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-ticket-2:hover {
+    background-color: var(--white);
+    color: var(--red);
+  }
+}
+
+.button-story img {
+  height: 0.9em !important;
+  width: auto !important;
+  max-width: none;
+  transition: filter 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-story:hover img {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(12%) saturate(450%) hue-rotate(1deg) brightness(102%) contrast(88%);
+  }
+}
+
+.button-ticket-2 img {
+  height: 1.5em !important;
+  width: auto !important;
+  max-width: none;
+  filter: brightness(0) saturate(100%) invert(87%) sepia(12%) saturate(450%) hue-rotate(1deg) brightness(102%) contrast(88%);
+  transition: filter 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-ticket-2:hover img {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(5000%) hue-rotate(356deg) brightness(90%) contrast(115%);
+  }
+}
+
+.footer-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 1.5rem;
+}
+
+
+footer {
+  background-color: var(--red);
+  color: var(--white);
 }
 
 
@@ -952,7 +1096,7 @@ header .hero-text {
 /* === END DEBUG SECTION 2 === */
 
 /* === DEBUG SECTION 3 (WHITE-RIGHT) === */
-.section-h2-white-right:nth-of-type(3) {
+/* .section-h2-white-right:nth-of-type(3) {
   outline: 2px solid red !important;
 }
 
@@ -978,12 +1122,12 @@ header .hero-text {
 
 .section-h2-white-right:nth-of-type(3) div {
   outline: 2px solid purple !important;
-}
+} */
 
 /* === END DEBUG SECTION 3 === */
 
 /* === DEBUG SECTION 4 (RED-LEFT) === */
-.section-h2-red-left {
+/* .section-h2-red-left {
   outline: 2px solid red !important;
 }
 
@@ -1009,7 +1153,7 @@ header .hero-text {
 
 .section-h2-red-left div {
   outline: 2px solid purple !important;
-}
+} */
 
 /* === END DEBUG SECTION 4 === */
 
@@ -1039,6 +1183,41 @@ header .hero-text {
 
 /* === END DEBUG === */
 
+
+/* === DEBUG FOOTER === */
+/* footer {
+  outline: 2px solid red !important;
+}
+
+footer h2 {
+  outline: 2px solid blue !important;
+}
+
+footer p {
+  outline: 2px solid green !important;
+}
+
+footer h3 {
+  outline: 2px solid yellow !important;
+}
+
+footer img {
+  outline: 2px solid pink !important;
+}
+
+footer button {
+  outline: 2px solid orange !important;
+}
+
+footer div {
+  outline: 2px solid purple !important;
+}
+
+footer a {
+  outline: 2px solid cyan !important;
+} */
+
+/* === END DEBUG FOOTER === */
 
 
 

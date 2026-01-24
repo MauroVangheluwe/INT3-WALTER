@@ -5,6 +5,10 @@ export class TshirtProduction {
     this.count = 1; // Start with 1 (initial tshirt)
     this.maxCount = 5;
     
+    // Get the base path from the first image
+    const firstImg = this.container?.querySelector('img');
+    this.imageSrc = firstImg ? firstImg.src : '/src/assets/t-shirt.png';
+    
     this.init();
   }
   
@@ -22,7 +26,7 @@ export class TshirtProduction {
     
     // Create new tshirt
     const tshirt = document.createElement('img');
-    tshirt.src = './src/assets/t-shirt.png';
+    tshirt.src = this.imageSrc; // Use the same src as the first image
     tshirt.alt = "Walter's T-shirt";
     tshirt.classList.add('tshirt-item');
     tshirt.dataset.index = this.count;
