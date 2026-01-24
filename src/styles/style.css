@@ -733,10 +733,31 @@ section {
   margin-left: auto;
 }
 
+/* Production Section - Tshirt Stack */
+.tshirt-stack-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+  overflow: visible;
+  transform: translateX(10%);
+}
+
+.tshirt-item {
+  position: absolute;
+  width: 140%;
+  max-width: none;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
 /* KTF Carousel */
 .ktf-carousel-container {
   overflow: hidden;
-  margin: 5rem 0;
+  margin: 5rem 0 3rem 0;
   background-color: var(--white);
   padding: 1rem 0;
 }
@@ -775,7 +796,55 @@ section {
 }
 
 
+/* section - production */
+/* -------------------------- */
 
+.section-production {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.section-production-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+
+/* button - tshirt */
+
+.button-tshirt {
+  font-family: var(--font-owners-narrow);
+  font-size: 1.7rem;
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: var(--white);
+  border: 5px solid var(--red);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button-tshirt img {
+  height: 1.5em !important;
+  width: auto !important;
+  max-width: none;
+}
+
+.tshirt-uitleg {
+  font-weight: 700;
+  text-align: center;
+  margin-top: -2rem;
+}
+
+.tshirt-stack-container {
+  margin-top: -3rem;
+}
 
 
 
