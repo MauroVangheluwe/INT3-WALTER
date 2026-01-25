@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Progressive Enhancement
 document.addEventListener('DOMContentLoaded', () => {
-
+  
   document.documentElement.classList.add('js-enabled');
 
   // Init ScrollSmoother first!

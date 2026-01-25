@@ -104,8 +104,13 @@ const headerTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   createParallax('.walter-incognito-img', 0.5);
   createParallax('.materials-collage', 0.8);
   
-  // Hover magnetic buttons
+  // Hover magnetic buttons (desktop only)
   const applyMagneticEffect = (selector) => {
+    // Only apply on devices with hover capability
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      return;
+    }
+    
     const buttons = gsap.utils.toArray(selector);
     buttons.forEach(btn => {
       btn.addEventListener('mousemove', (e) => {

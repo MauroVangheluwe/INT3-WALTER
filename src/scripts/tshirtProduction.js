@@ -5,10 +5,6 @@ export class TshirtProduction {
     this.count = 1; // Start with 1 (initial tshirt)
     this.maxCount = 5;
     
-    // Get the base path from the first image
-    const firstImg = this.container?.querySelector('img');
-    this.imageSrc = firstImg ? firstImg.src : '/src/assets/t-shirt.png';
-    
     this.init();
   }
   
@@ -24,9 +20,24 @@ export class TshirtProduction {
   addTshirt() {
     if (this.count >= this.maxCount) return;
     
-    // Create new tshirt
+    // Create picture element for responsive images
+    const picture = document.createElement('picture');
+    
+    // AVIF source (best compression)
+    const avifSource = document.createElement('source');
+    avifSource.type = 'image/avif';
+    avifSource.srcset = './src/assets/t-shirt-400.avif 400w, ./src/assets/t-shirt-800.avif 800w, ./src/assets/t-shirt-1200.avif 1200w';
+    avifSource.sizes = '(max-width: 768px) 80vw, 50vw';
+    
+    // WebP source (fallback)
+    const webpSource = document.createElement('source');
+    webpSource.type = 'image/webp';
+    webpSource.srcset = './src/assets/t-shirt-400.webp 400w, ./src/assets/t-shirt-800.webp 800w, ./src/assets/t-shirt-1200.webp 1200w';
+    webpSource.sizes = '(max-width: 768px) 80vw, 50vw';
+    
+    // Create img element (final fallback)
     const tshirt = document.createElement('img');
-    tshirt.src = this.imageSrc; // Use the same src as the first image
+    tshirt.src = './src/assets/t-shirt.png';
     tshirt.alt = "Walter's T-shirt";
     tshirt.classList.add('tshirt-item');
     tshirt.dataset.index = this.count;
@@ -48,8 +59,13 @@ export class TshirtProduction {
     tshirt.style.zIndex = zIndex;
     tshirt.style.opacity = '0';
     
-    // Add to container
-    this.container.appendChild(tshirt);
+    // Append sources and img to picture
+    picture.appendChild(avifSource);
+    picture.appendChild(webpSource);
+    picture.appendChild(tshirt);
+    
+    // Add picture to container
+    this.container.appendChild(picture);
     
     // Trigger animation
     requestAnimationFrame(() => {
