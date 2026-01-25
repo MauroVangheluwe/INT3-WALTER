@@ -965,7 +965,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 0 1.5rem;
 }
 
 
@@ -973,6 +972,20 @@ footer {
   background-color: var(--red);
   color: var(--white);
 }
+
+
+.deze-icon {
+  margin: 0 1.5rem;
+}
+
+.button-ticket {
+  margin: 0 1.5rem;
+}
+
+.footer-button-container {
+  margin: 2rem 1.5rem 4rem 1.5rem;
+}
+
 
 
 
