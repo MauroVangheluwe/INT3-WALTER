@@ -190,13 +190,7 @@ const headerTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
         x: 100,
         duration: 0.8,
         ease: 'power2.out'
-      }, '-=0.6')
-      .from('.materials-text-shape > *', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        duration: 0.6
-      }, '-=0.4');
+      }, '-=0.6');
     },
     once: true
   });
