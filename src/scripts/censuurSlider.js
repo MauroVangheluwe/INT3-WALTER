@@ -14,30 +14,30 @@ export class CensuurSlider {
     // Maximum blur in pixels (pas dit aan om meer/minder blur te krijgen)
     this.maxBlur = 5;
     
-    // Cache alle elementen die blur moeten krijgen
+    // alle elementen cachen die geblurred moeten worden, voor performance
     this.blurElements = [];
     if (this.section) {
-      // Voeg base images toe
+      // base image toevoegen
       this.blurElements.push(...this.section.querySelectorAll('.censored-base-image'));
       
-      // Voeg alle p tags toe (behalve censuur-meter-title en censuur-uitleg)
+      // alle p tags behalve titel en uitleg
       const paragraphs = this.section.querySelectorAll('p:not(.censuur-meter-title):not(.censuur-uitleg)');
       this.blurElements.push(...paragraphs);
       
-      // Voeg h3 tags toe
+      // alle h3 tags
       const h3s = this.section.querySelectorAll('h3');
       this.blurElements.push(...h3s);
       
-      // Voeg carousel toe
+      // carousel
       const carousel = this.section.querySelector('.ktf-carousel-container');
       if (carousel) this.blurElements.push(carousel);
       
-      // Voeg walter-incognito-img toe
+      // walter img
       const walterImg = this.section.querySelector('.walter-incognito-img');
       if (walterImg) this.blurElements.push(walterImg);
     }
     
-    // Cache labels voor click handlers
+    // labels cachen voor click handlers
     this.labels = this.section ? Array.from(this.section.querySelectorAll('.censored-label')) : [];
     
     this.init();
@@ -51,21 +51,28 @@ export class CensuurSlider {
     document.addEventListener('mousemove', (e) => this.handleMouseMove(e));
     document.addEventListener('mouseup', () => this.handleMouseUp());
     
-    // Touch events voor mobile
+    // Touch events
     this.slider.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
     document.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
     document.addEventListener('touchend', () => this.handleTouchEnd());
     
     // Click op track
     this.slider.addEventListener('click', (e) => this.handleTrackClick(e));
+        // Keyboard accessibility
+    this.slider.setAttribute('tabindex', '0');
+    this.slider.setAttribute('role', 'slider');
+    this.slider.setAttribute('aria-valuemin', '0');
+    this.slider.setAttribute('aria-valuemax', '100');
+    this.slider.setAttribute('aria-label', 'Censuur percentage');
     
-    // Set will-change op blur elementen
+    this.slider.addEventListener('keydown', (e) => this.handleKeyDown(e));
+        // will-change op blur elementen
     this.blurElements.forEach(el => {
       if (el) {
         el.style.willChange = 'filter';
         el.style.transition = 'filter 0.2s ease';
         
-        // Add hover listeners (desktop only)
+        // hover listeners
         if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
           el.addEventListener('mouseenter', () => {
             el.dataset.hovered = 'true';
@@ -74,7 +81,7 @@ export class CensuurSlider {
           
           el.addEventListener('mouseleave', () => {
             delete el.dataset.hovered;
-            // Reapply current blur
+            // herbereken blur op basis van huidige percentage
             const blurAmount = (this.percentage / 100) * this.maxBlur;
             el.style.filter = `blur(${blurAmount}px)`;
           });
@@ -82,7 +89,7 @@ export class CensuurSlider {
       }
     });
     
-    // Add click handlers to labels
+    // click handler voor labels
     this.labels.forEach(label => {
       label.addEventListener('click', () => {
         label.style.opacity = '0';
@@ -128,17 +135,32 @@ export class CensuurSlider {
     this.updateFromEvent(e);
   }
   
+  handleKeyDown(e) {
+    // verhoog censuur met 5% (pijltjes links/rechts)
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const newPercentage = Math.max(0, this.percentage - 5);
+      this.updateSlider(newPercentage);
+    }
+    
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const newPercentage = Math.min(100, this.percentage + 5);
+      this.updateSlider(newPercentage);
+    }
+  }
+  
   updateFromEvent(e) {
     const rect = this.slider.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
     
-    // Cancel previous animation frame
+    // previous frame uitzetten als die er is
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
     
-    // Use requestAnimationFrame for smooth updates
+    // request frame voor smoother effect
     this.animationFrameId = requestAnimationFrame(() => {
       this.updateSlider(percentage);
     });
@@ -147,13 +169,16 @@ export class CensuurSlider {
   updateSlider(percentage) {
     this.percentage = percentage;
     
-    // Update fill width
+    // Updaten fill width
     this.fill.style.width = `${percentage}%`;
     
-    // Update percentage display
+    // Updaten percentage display
     this.percentageDisplay.textContent = `${Math.round(percentage)}%`;
     
-    // Apply blur effect
+    // Updaten ARIA attribute
+    this.slider.setAttribute('aria-valuenow', Math.round(percentage));
+    
+    // blur effect
     this.applyBlurEffect(percentage);
   }
   
