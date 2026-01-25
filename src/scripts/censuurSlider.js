@@ -65,18 +65,20 @@ export class CensuurSlider {
         el.style.willChange = 'filter';
         el.style.transition = 'filter 0.2s ease';
         
-        // Add hover listeners
-        el.addEventListener('mouseenter', () => {
-          el.dataset.hovered = 'true';
-          el.style.filter = 'blur(0px)';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-          delete el.dataset.hovered;
-          // Reapply current blur
-          const blurAmount = (this.percentage / 100) * this.maxBlur;
-          el.style.filter = `blur(${blurAmount}px)`;
-        });
+        // Add hover listeners (desktop only)
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+          el.addEventListener('mouseenter', () => {
+            el.dataset.hovered = 'true';
+            el.style.filter = 'blur(0px)';
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            delete el.dataset.hovered;
+            // Reapply current blur
+            const blurAmount = (this.percentage / 100) * this.maxBlur;
+            el.style.filter = `blur(${blurAmount}px)`;
+          });
+        }
       }
     });
     

@@ -33,8 +33,36 @@
           <div class="gun-container">
             <h1 class="interactive-header">
               <div class="header-layers">
-                <img class="gun" src="./src/assets/gun.png" alt="gun" aria-hidden="true">
-                <img class="gun-shape" src="./src/assets/gun-shape.png" alt="gun shape" aria-hidden="true">
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcset="./src/assets/gun-300.avif 300w,
+                            ./src/assets/gun-600.avif 600w"
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="./src/assets/gun-300.webp 300w,
+                            ./src/assets/gun-600.webp 600w"
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                  />
+                  <img class="gun" src="./src/assets/gun.png" alt="gun" aria-hidden="true" />
+                </picture>
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcset="./src/assets/gun-shape-300.avif 300w,
+                            ./src/assets/gun-shape-600.avif 600w"
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="./src/assets/gun-shape-300.webp 300w,
+                            ./src/assets/gun-shape-600.webp 600w"
+                    sizes="(max-width: 768px) 40vw, 20vw"
+                  />
+                  <img class="gun-shape" src="./src/assets/gun-shape.png" alt="gun shape" aria-hidden="true" />
+                </picture>
               </div>
               <span class="visually-hidden">Walter Van Beirendonck</span>
             </h1>
@@ -69,7 +97,27 @@
     <main>
       <section id="next" class="intro-section section-h2-white-right">
         <h2>De rebel<br>achter <span class="r">W&amp;LT</span></h2>
-        <img class="intro-img" src="./src/assets/intro-img.png" alt="Walter Van Beirendonck">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="./src/assets/intro-img-400.avif 400w,
+                    ./src/assets/intro-img-800.avif 800w,
+                    ./src/assets/intro-img-1200.avif 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="./src/assets/intro-img-400.webp 400w,
+                    ./src/assets/intro-img-800.webp 800w,
+                    ./src/assets/intro-img-1200.webp 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <img
+            class="intro-img"
+            src="./src/assets/intro-img.png"
+            alt="Walter Van Beirendonck"
+          />
+        </picture>
 
         <div class="intro-section-text-container container">
           <p class="text-inter intro-section-inter-text left-aligned"><span class="bold">Walter Van Beirendonck gebruikt mode niet als eindpunt, maar als <span class="r">reactie</span>. Niet om trends te volgen, maar <span class="r">om het systeem aan te vallen.</span></span></p>
@@ -129,7 +177,28 @@
         </div>
         
         <div class="materials-grid">
-          <img src="./src/assets/materials-collage.png" alt="materials-collage" class="materials-collage">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="./src/assets/materials-collage-500.avif 500w,
+                      ./src/assets/materials-collage-1000.avif 1000w,
+                      ./src/assets/materials-collage-1600.avif 1600w"
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+            <source
+              type="image/webp"
+              srcset="./src/assets/materials-collage-500.webp 500w,
+                      ./src/assets/materials-collage-1000.webp 1000w,
+                      ./src/assets/materials-collage-1600.webp 1600w"
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+            <img
+              class="materials-collage"
+              src="./src/assets/materials-collage.png"
+              alt="materials-collage"
+              loading="lazy"
+            />
+          </picture>
           
           <div class="materials-text-shape">
             <h3 class="left-aligned-title deze-icon">Deze iconische stukken materialen maken deel uit van <span class="bold r">de collectie van MoMu</span>, waar bezoekers ze van dichtbij kunnen bekijken en aanvoelen.</h3>
@@ -143,7 +212,28 @@
 
       <section class="slogan-section section-h2-white-right">
         <h2>Slogans<br>die <span class="r">storen</span></h2>
-        <img class="walter-incognito-img" src="./src/assets/incognito-walter.png" alt="incognito-walter">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="./src/assets/incognito-walter-400.avif 400w,
+                    ./src/assets/incognito-walter-800.avif 800w,
+                    ./src/assets/incognito-walter-1200.avif 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="./src/assets/incognito-walter-400.webp 400w,
+                    ./src/assets/incognito-walter-800.webp 800w,
+                    ./src/assets/incognito-walter-1200.webp 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <img
+            class="walter-incognito-img"
+            src="./src/assets/incognito-walter.png"
+            alt="incognito-walter"
+            loading="lazy"
+          />
+        </picture>
 
         <div class="censuur-meter-container container">
           <p class="censuur-meter-title left-aligned">censuur-meter</p>
@@ -161,8 +251,46 @@
 
           <div class="censored-item">
             <div class="censored-image-wrapper">
-              <img class="censored-base-image" src="./src/assets/censored-image-1.png" alt="censored-img-1">
-              <img class="censored-label" src="./src/assets/censored-label-1.png" alt="censored-label-1">
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="./src/assets/censored-image-1-400.avif 400w,
+                          ./src/assets/censored-image-1-800.avif 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <source
+                  type="image/webp"
+                  srcset="./src/assets/censored-image-1-400.webp 400w,
+                          ./src/assets/censored-image-1-800.webp 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <img
+                  class="censored-base-image"
+                  src="./src/assets/censored-image-1.png"
+                  alt="censored-img-1"
+                  loading="lazy"
+                />
+              </picture>
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="./src/assets/censored-label-1-400.avif 400w,
+                          ./src/assets/censored-label-1-800.avif 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <source
+                  type="image/webp"
+                  srcset="./src/assets/censored-label-1-400.webp 400w,
+                          ./src/assets/censored-label-1-800.webp 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <img
+                  class="censored-label"
+                  src="./src/assets/censored-label-1.png"
+                  alt="censored-label-1"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <p class="momu-label-left">* Item te bekijken in MoMu</p>
           </div>
@@ -171,8 +299,46 @@
           <p>Zijn slogans lenen hun visuele taal van <span class="bold">waarschuwingen, veiligheidslabels en straatprotest</span>. Ze zijn functioneel, <span class="bold r">niet decoratief.</span> Door tekst centraal te plaatsen waar mode traditioneel focust op vorm, verschuift Walter de rol van kleding: het wordt <span class="bold r">een communicatiesysteem</span> dat door de publieke ruimte beweegt.</p>
           <div class="censored-item">
             <div class="censored-image-wrapper">
-              <img class="censored-base-image" src="./src/assets/censored-image-2.png" alt="censored-img-2">
-              <img class="censored-label" src="./src/assets/censored-label-2.png" alt="censored-label-2">
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="./src/assets/censored-image-2-400.avif 400w,
+                          ./src/assets/censored-image-2-800.avif 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <source
+                  type="image/webp"
+                  srcset="./src/assets/censored-image-2-400.webp 400w,
+                          ./src/assets/censored-image-2-800.webp 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <img
+                  class="censored-base-image"
+                  src="./src/assets/censored-image-2.png"
+                  alt="censored-img-2"
+                  loading="lazy"
+                />
+              </picture>
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset="./src/assets/censored-label-2-400.avif 400w,
+                          ./src/assets/censored-label-2-800.avif 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <source
+                  type="image/webp"
+                  srcset="./src/assets/censored-label-2-400.webp 400w,
+                          ./src/assets/censored-label-2-800.webp 800w"
+                  sizes="(max-width: 768px) 50vw, 30vw"
+                />
+                <img
+                  class="censored-label"
+                  src="./src/assets/censored-label-2.png"
+                  alt="censored-label-2"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <p class="momu-label-right">* Item te bekijken in MoMu</p>
           </div>
@@ -218,12 +384,36 @@
           <p class="tshirt-uitleg right-aligned">Druk meermaals op de knop, zo ervaar je het effect van <span class="r">massaproductie.</span></p>
           
           <div class="tshirt-stack-container right-aligned">
-            <img src="./src/assets/t-shirt.png" alt="Walter's T-shirt" class="tshirt-item" data-index="0">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="./src/assets/t-shirt-400.avif 400w,
+                        ./src/assets/t-shirt-800.avif 800w,
+                        ./src/assets/t-shirt-1200.avif 1200w"
+                sizes="(max-width: 768px) 80vw, 50vw"
+              />
+              <source
+                type="image/webp"
+                srcset="./src/assets/t-shirt-400.webp 400w,
+                        ./src/assets/t-shirt-800.webp 800w,
+                        ./src/assets/t-shirt-1200.webp 1200w"
+                sizes="(max-width: 768px) 80vw, 50vw"
+              />
+              <img
+                class="tshirt-item"
+                src="./src/assets/t-shirt.png"
+                alt="Walter's T-shirt"
+                data-index="0"
+                loading="lazy"
+              />
+            </picture>
           </div>
           
-          <h3 class="left-aligned">Wat ooit expressief was, verandert in <span class="bold r">formule.</span></h3>
-          <p class="left-aligned">Deze kritiek gaat verder dan mode alleen. Overconsumptie beïnvloedt hoe we omgaan met <span class="bold">beelden, objecten en ideeën.</span> De constante drang naar vernieuwing creëert <span class="bold r">oppervlakkigheid.</span> In plaats van ontsnapping te bieden, confronteert Walter de kijker met deze realiteit.</p>
-          <p class="left-aligned"><span class="bold">Naarmate herhaling toeneemt, verdwijnt rijkdom. Kleur vervaagt. Tekst verdwijnt. Wat overblijft is <span class="r">volume zonder inhoud.</span></span></p>
+          <div class="tshirt-text-container-container">
+          <h3 class="left-aligned tshirt-text-container">Wat ooit expressief was, verandert in <span class="bold r">formule.</span></h3>
+          <p class="left-aligned tshirt-text-container">Deze kritiek gaat verder dan mode alleen. Overconsumptie beïnvloedt hoe we omgaan met <span class="bold">beelden, objecten en ideeën.</span> De constante drang naar vernieuwing creëert <span class="bold r">oppervlakkigheid.</span> In plaats van ontsnapping te bieden, confronteert Walter de kijker met deze realiteit.</p>
+          <p class="left-aligned tshirt-text-container"><span class="bold">Naarmate herhaling toeneemt, verdwijnt rijkdom. Kleur vervaagt. Tekst verdwijnt. Wat overblijft is <span class="r">volume zonder inhoud.</span></span></p>
+        </div>
         </div>
       </section>
 
@@ -238,7 +428,28 @@
         <p class="footer-text"><span class="bold">Dit is slechts één van de 6 verhalen die je bij MoMu kunt ontdekken. Ontdek onder andere <span class="b">Christian Dior en Dirk Bikkembergs</span> in de volgende verhalen.</span></p>
         </div>
         <div class="right-column-footer">
-        <img src="./src/assets/footer-img.png" alt="momu-gallery-img" class="footer-img">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="./src/assets/footer-img-400.avif 400w,
+                    ./src/assets/footer-img-800.avif 800w,
+                    ./src/assets/footer-img-1200.avif 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcset="./src/assets/footer-img-400.webp 400w,
+                    ./src/assets/footer-img-800.webp 800w,
+                    ./src/assets/footer-img-1200.webp 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <img
+            class="footer-img"
+            src="./src/assets/footer-img.png"
+            alt="momu-gallery-img"
+            loading="lazy"
+          />
+        </picture>
 
         <div class="footer-button-container">
           <a href="https://www.momu.be/nl/" class="button-story" target="_blank" rel="noopener noreferrer">
