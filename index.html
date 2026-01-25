@@ -49,6 +49,17 @@
       rel="stylesheet">
   </noscript>
   
+  <!-- Critical CSS for font fallbacks -->
+  <style>
+    /* Ensure text is visible with fallback fonts while custom fonts load */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./src/styles/reset.css">
   <link rel="stylesheet" href="./src/styles/style.css">
