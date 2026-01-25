@@ -40,7 +40,6 @@ body {
   font-family: var(--font-inter);
   font-size: 1rem;
   line-height: 1.6;
-  /* 160% */
   color: var(--white);
   background-color: var(--black);
   overflow-x: hidden;
@@ -77,7 +76,6 @@ html {
 h1 {
   font-family: var(--font-owners-narrow);
   font-size: var(--fs-h1);
-  /* Responsive: 32px min to 50px max */
   line-height: 1.1;
   font-weight: 500;
   font-style: italic;
@@ -86,7 +84,6 @@ h1 {
 h2 {
   font-family: var(--font-owners-narrow);
   font-size: var(--fs-h2);
-  /* Responsive: 48px min to 72px max */
   line-height: 1.1;
   font-weight: 700;
   text-transform: uppercase;
@@ -95,7 +92,6 @@ h2 {
 h3 {
   font-family: var(--font-owners-narrow);
   font-size: var(--fs-h3);
-  /* Responsive: 20px min to 32px max */
   line-height: 1;
   font-weight: 500;
   font-style: italic;
@@ -103,7 +99,6 @@ h3 {
 
 p {
   font-size: var(--fs-p);
-  /* Responsive: 16px min to 17px max */
   line-height: 1.6;
 }
 
@@ -235,7 +230,6 @@ blockquote::after {
 
 
 
-/* Main & Sections overflow hidden */
 main {
   overflow-x: hidden;
 }
@@ -301,7 +295,6 @@ header {
   animation: none;
 }
 
-/* Breathing animation for gun to indicate clickability */
 @keyframes gun-pulse {
 
   0%,
@@ -452,7 +445,6 @@ section {
 .intro-section {
   margin-top: 5rem;
   position: relative;
-  /* anchor for image absolute positioning */
 }
 
 .intro-img {
@@ -570,10 +562,6 @@ section {
   margin: 5rem 0;
 }
 
-/* .materials-text-shape {
-  margin-top: -15rem;
-} */
-
 
 .button-ticket {
   grid-row: 2 / 3;
@@ -622,7 +610,6 @@ section {
 .slogan-section {
   margin-top: 5rem;
   position: relative;
-  /* anchor for image absolute positioning */
 }
 
 .walter-incognito-img {
@@ -757,7 +744,7 @@ section {
   margin-left: auto;
 }
 
-/* Production Section - Tshirt Stack */
+/* Production Section - Tshirt interaction */
 .tshirt-stack-container {
   position: relative;
   width: 100%;
@@ -999,241 +986,9 @@ footer {
 
 
 
-
-
-/* === DEBUG HEADER === */
-/* header * {
-  outline: 2px solid red !important;
-}
-
-header .logo {
-  outline: 2px solid blue !important;
-}
-
-header .header-layers {
-  outline: 2px solid green !important;
-}
-
-header .hero-section {
-  outline: 2px solid yellow !important;
-}
-
-header .hero-cta-arrow {
-  outline: 2px solid orange !important;
-}
-
-header .hero-text {
-  outline: 2px solid purple !important;
-} */
-
-/* === END DEBUG HEADER === */
-
-
-/* === DEBUG INTRO SECTION === */
-/* .intro-section {
-  outline: 2px solid red !important;
-}
-
-.intro-section h2 {
-  outline: 2px solid blue !important;
-}
-
-.intro-section p {
-  outline: 2px solid green !important;
-}
-
-.intro-section h3 {
-  outline: 2px solid yellow !important;
-}
-
-.intro-section img {
-  outline: 2px solid pink !important;
-}
-
-.intro-section button {
-  outline: 2px solid orange !important;
-}
-
-.intro-section div {
-  outline: 2px solid purple !important;
-} */
-
-/* === END DEBUG INTRO === */
-
-/* === DEBUG SECTION 2 (BLACK-LEFT) === */
-.section-h2-black-left {
-  outline: 2px solid red !important;
-}
-
-.section-h2-black-left h2 {
-  outline: 2px solid blue !important;
-}
-
-.section-h2-black-left p {
-  outline: 2px solid green !important;
-}
-
-.section-h2-black-left h3 {
-  outline: 2px solid yellow !important;
-}
-
-.section-h2-black-left img {
-  outline: 2px solid pink !important;
-}
-
-.section-h2-black-left button {
-  outline: 2px solid orange !important;
-}
-
-.section-h2-black-left div {
-  outline: 2px solid purple !important;
-}
-
-/* === END DEBUG SECTION 2 === */
-
-/* === DEBUG SECTION 3 (WHITE-RIGHT) === */
-.section-h2-white-right:nth-of-type(3) {
-  outline: 2px solid red !important;
-}
-
-.section-h2-white-right:nth-of-type(3) h2 {
-  outline: 2px solid blue !important;
-}
-
-.section-h2-white-right:nth-of-type(3) p {
-  outline: 2px solid green !important;
-}
-
-.section-h2-white-right:nth-of-type(3) h3 {
-  outline: 2px solid yellow !important;
-}
-
-.section-h2-white-right:nth-of-type(3) img {
-  outline: 2px solid pink !important;
-}
-
-.section-h2-white-right:nth-of-type(3) button {
-  outline: 2px solid orange !important;
-}
-
-.section-h2-white-right:nth-of-type(3) div {
-  outline: 2px solid purple !important;
-}
-
-/* === END DEBUG SECTION 3 === */
-
-/* === DEBUG SECTION 4 (RED-LEFT) === */
-.section-h2-red-left {
-  outline: 2px solid red !important;
-}
-
-.section-h2-red-left h2 {
-  outline: 2px solid blue !important;
-}
-
-.section-h2-red-left p {
-  outline: 2px solid green !important;
-}
-
-.section-h2-red-left h3 {
-  outline: 2px solid yellow !important;
-}
-
-.section-h2-red-left img {
-  outline: 2px solid pink !important;
-}
-
-.section-h2-red-left button {
-  outline: 2px solid orange !important;
-}
-
-.section-h2-red-left div {
-  outline: 2px solid purple !important;
-}
-
-/* === END DEBUG SECTION 4 === */
-
-.section-h2-black-left h2 {
-  border: 2px solid red;
-}
-
-.section-h2-black-left p {
-  border: 2px solid red;
-}
-
-.section-h2-black-left h3 {
-  border: 2px solid red;
-}
-
-.section-h2-black-left img {
-  border: 2px solid red;
-}
-
-.section-h2-black-left button {
-  border: 2px solid red;
-}
-
-.section-h2-black-left div {
-  border: 2px solid red;
-}
-
-/* === END DEBUG === */
-
-
-/* === DEBUG FOOTER === */
-footer {
-  outline: 2px solid red !important;
-}
-
-footer h2 {
-  outline: 2px solid blue !important;
-}
-
-footer p {
-  outline: 2px solid green !important;
-}
-
-footer h3 {
-  outline: 2px solid yellow !important;
-}
-
-footer img {
-  outline: 2px solid pink !important;
-}
-
-footer button {
-  outline: 2px solid orange !important;
-}
-
-footer div {
-  outline: 2px solid purple !important;
-}
-
-footer a {
-  outline: 2px solid cyan !important;
-}
-
-/* === END DEBUG FOOTER === */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- Breakpoint for Desktop Reference --- */
-/* To see mobile view on desktop: Resize browser width < 768px */
+/* --- Breakpoint for Tablet --- */
 @media (min-width: 768px) {
 
-  /* Desktop typography adjustments */
   :root {
     --fs-h1: clamp(4rem, 5vw + 2rem, 8rem);
     --fs-h2: clamp(4rem, 4vw + 2rem, 9rem);
@@ -1241,25 +996,21 @@ footer a {
     --fs-p: clamp(1.125rem, 0.5vw + 1rem, 1.5rem);
   }
 
-  /* Container max-width for readability */
   .container {
-    padding: 0 7rem;
+    padding: 0 5rem;
   }
 
 
-  /* H2 - with background color & sides */
-  /* -------------------------- */
-
   .section-h2-white-right h2 {
-    margin-left: 10rem;
+    margin-left: 5rem;
   }
 
   .section-h2-black-left h2 {
-    margin-right: 10rem;
+    margin-right: 5rem;
   }
 
   .section-h2-red-left h2 {
-    margin-right: 10rem;
+    margin-right: 5rem;
   }
 
 
@@ -1271,6 +1022,10 @@ footer a {
     padding-top: 4rem;
   }
 
+  .logo {
+    width: 8rem;
+  }
+
   .gun {
     width: 35%;
   }
@@ -1280,15 +1035,15 @@ footer a {
   }
 
   .header-layers {
-    margin-top: 10rem;
+    margin-top: 4rem;
   }
 
 
 
   .hero-section {
     display: flex;
-    margin: -25rem 0 0 auto;
-    padding: 0 7rem;
+    margin: -15rem 0 0 auto;
+    padding: 0 5rem;
     max-width: 100%;
     gap: 5rem;
   }
@@ -1301,10 +1056,6 @@ footer a {
     max-width: 50rem;
   }
 
-  .hero-cta-text {
-    margin-top: 5rem;
-  }
-
 
 
 
@@ -1312,14 +1063,14 @@ footer a {
   .intro-img {
     top: 0;
 
-    width: clamp(40rem, 20vw + 20rem, 50rem);
+    width: clamp(30rem, 20vw + 20rem, 40rem);
   }
 
   .intro-section-text-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     gap: 4rem 6rem;
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 
   .intro-section-inter-text {
@@ -1353,7 +1104,6 @@ footer a {
     }
   }
 
-  /* Target the 3 paragraphs that come after intro-section-inter-text for grid placement */
   .intro-section-text-container>p.right-aligned:nth-of-type(2) {
     grid-column: 2;
     grid-row: 2;
@@ -1369,14 +1119,12 @@ footer a {
     grid-row: 4;
   }
 
-  /* Other elements span full width */
   .intro-section-text-container>.left-aligned,
   .intro-section-text-container>.left-aligned-title,
   .intro-section-text-container>.right-aligned-title {
     grid-column: 1 / -1;
   }
 
-  /* General alignment classes for all sections */
   .left-aligned {
     text-align: left;
     margin-right: auto;
@@ -1428,7 +1176,7 @@ footer a {
 
   .materials-grid {
     display: flex;
-    margin-left: 7rem;
+    margin-left: 5rem;
     margin-top: 10rem;
   }
 
@@ -1505,7 +1253,6 @@ footer a {
 
 
 
-  /* Production Section - Desktop */
 
   .section-production-content-container {
     display: flex;
@@ -1521,7 +1268,6 @@ footer a {
     margin-left: auto;
   }
 
-  /* Footer - Desktop */
   .footer-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1532,7 +1278,7 @@ footer a {
   .container-footer {
     grid-column: 1;
     padding: 0;
-    margin: 0 0 0 7rem;
+    margin: 0 0 0 5rem;
   }
 
   .footer-img {
@@ -1554,13 +1300,95 @@ footer a {
   }
 
   .right-column-footer {
-    margin-right: 7rem;
+    margin-right: 5rem;
   }
 
-  .button-story, .button-ticket-2 {
+  .button-story,
+  .button-ticket-2 {
     min-width: 25rem;
     max-width: 40rem;
     margin-left: auto;
+  }
+
+  footer {
+    padding: 5rem 0;
+  }
+
+  .section-production {
+    padding-bottom: 15rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* --- Breakpoint for Desktop --- */
+@media (min-width: 1081px) {
+
+  .container {
+    padding: 0 7rem;
+  }
+
+  .section-h2-white-right h2 {
+    margin-left: 10rem;
+  }
+
+  .section-h2-black-left h2 {
+    margin-right: 10rem;
+  }
+
+  .section-h2-red-left h2 {
+    margin-right: 10rem;
+  }
+
+
+  .header-layers {
+    margin-top: 10rem;
+  }
+
+
+
+  .hero-section {
+    margin: -25rem 0 0 auto;
+    padding: 0 7rem;
+  }
+
+  .hero-cta-text {
+    margin-top: 5rem;
+  }
+
+
+
+
+
+  .intro-img {
+    width: clamp(40rem, 20vw + 20rem, 50rem);
+  }
+
+  .intro-section-text-container {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8rem;
+  }
+
+
+
+  .materials-grid {
+    margin-left: 7rem;
+  }
+
+
+  .container-footer {
+    margin: 0 0 0 7rem;
+  }
+
+  .right-column-footer {
+    margin-right: 7rem;
   }
 
 }
@@ -1594,4 +1422,21 @@ body.shake {
 }
 
 
-@media (max-width: 0px) {}
+
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  
+  .wlt-carousel-track,
+  .ktf-carousel-track {
+    animation: none !important;
+  }
+
+  body.shake {
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
