@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initGunInteraction } from './gunInteraction.js'
 import { CensuurSlider } from './censuurSlider.js'
 import { TshirtProduction } from './tshirtProduction.js'
+import { initScrollSmoother, initAnimations } from './gsapAnim.js'
 
 // GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -15,12 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.documentElement.classList.add('js-enabled');
 
+  // Init ScrollSmoother first!
+  initScrollSmoother();
+
   // Init gun interaction
   initGunInteraction();
   
   // Init censuur slider
   new CensuurSlider();
-  
   // Init tshirt production
   new TshirtProduction();
+
+  initAnimations();
 });

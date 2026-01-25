@@ -444,6 +444,7 @@ section {
 
 .intro-section {
   margin-top: 5rem;
+  padding-top: 5rem;
   position: relative;
 }
 
@@ -1013,7 +1014,9 @@ footer {
     margin-right: 5rem;
   }
 
-
+  .intro-section {
+    padding-top: 5rem;
+  }
 
 
 
@@ -1038,8 +1041,6 @@ footer {
     margin-top: 4rem;
   }
 
-
-
   .hero-section {
     display: flex;
     margin: -15rem 0 0 auto;
@@ -1055,8 +1056,6 @@ footer {
   .hero-text p {
     max-width: 50rem;
   }
-
-
 
 
 
@@ -1424,9 +1423,18 @@ body.shake {
 
 
 
-/* Reduced Motion */
+/* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
   .wlt-carousel-track,
   .ktf-carousel-track {
     animation: none !important;
@@ -1436,7 +1444,28 @@ body.shake {
     animation: none !important;
   }
 
+  .gun {
+    animation: none !important;
+  }
+
+  .gun.recoil {
+    animation: recoil-kick 0.2s ease-out !important;
+  }
+
   html {
     scroll-behavior: auto !important;
+  }
+
+  .censored-label {
+    transition: opacity 0.3s ease !important;
+  }
+
+  .gun-shape {
+    transition: filter 0.3s ease !important;
+  }
+
+  button,
+  a {
+    transition: background-color 0.2s ease, color 0.2s ease, filter 0.2s ease !important;
   }
 }
