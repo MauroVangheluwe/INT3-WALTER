@@ -4,11 +4,11 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// Check for reduced motion preference
+// reduce motion checken
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export function initScrollSmoother() {
-  // Skip ScrollSmoother if reduced motion is preferred
+  // geen scrollsmoother bij reduced motion
   if (prefersReducedMotion) {
     console.log('ScrollSmoother disabled: reduced motion preferred');
     return;
@@ -22,7 +22,7 @@ export function initScrollSmoother() {
 }
 
 export function initAnimations() {
-  // Skip all animations if reduced motion is preferred
+  // geen animaties bij reduced motion
   if (prefersReducedMotion) {
     console.log('GSAP animations disabled: reduced motion preferred');
     return;

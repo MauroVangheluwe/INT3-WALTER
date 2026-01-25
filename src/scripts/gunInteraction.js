@@ -1,6 +1,6 @@
-// Gun & Gun-Shape Interaction
+// Gun & Gun-Shape interactie
 export function initGunInteraction() {
-  // Track click count for progressive blur reveal
+  // Aantal clicks bijhouden
   let clickCount = 0;
   const maxClicks = 4;
   
@@ -12,11 +12,11 @@ export function initGunInteraction() {
       // Stop animation on first click
       gun.classList.add('clicked');
       
-      // Trigger recoil on Gun
+      // trigger weerstand on Gun
       gun.classList.add('recoil');
       setTimeout(() => gun.classList.remove('recoil'), 200);
 
-      // Trigger Gentle Shake
+      // trigger the viewport shake
       document.body.classList.add('shake');
       setTimeout(() => document.body.classList.remove('shake'), 200);
       
